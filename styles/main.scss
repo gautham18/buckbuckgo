@@ -1,0 +1,51 @@
+$logoUrl: "../images/logo.svg";
+
+/* Space out content a bit */
+body {
+  background-color : #f7f7f7;
+}
+
+*{
+  box-sizing: border-box;  
+}
+
+.orange-band{
+  position:fixed;
+  width: 100%;
+  height: 5px;
+  background-color: #de5833;
+}
+
+.search-main{
+  margin: 0px auto;
+  width: 60%;
+}
+
+.search-area{
+  padding: 50px 0px;
+  margin: 0px auto;
+  width: 60%;
+}
+
+.logo-holder{
+  a{
+    display: block;
+    margin: 0px auto;
+    background:url($logoUrl) no-repeat;
+    background-size: 200px 100px;    
+    width : 200px;
+    height: 100px
+  }
+
+  input{
+    width:90%;
+    margin:0px auto;
+    display: block;
+  }
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+}
