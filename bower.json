@@ -1,0 +1,27 @@
+{
+  "name": "duckDuck-clone",
+  "private": true,
+  "dependencies": {
+    "react": "~0.12.2",
+    "backbone": "~1.1.2",
+    "normalize.css": "~3.0.2"
+  },
+  "version": "0.1",
+  "description": "A basic clone of DuckDuckGo",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "buckbuckgo"
+  ],
+  "authors": [
+    "gautham18"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
