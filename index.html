@@ -1,33 +1,22 @@
 <!doctype html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8">
-    <title>indix</title>
+    <title>Buck Buck Go</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Norican' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body>
 
     <div class="orange-band"></div>
+    <div id="main"></div>
+      <!--https://github.com/philix/jsx-requirejs-plugin-->
+      <script data-main="scripts/main.js" src="../bower_components/requirejs/require.js"></script>
 
-    <div class="container">
-      <div class="search-main">
-        <div class="search-area">
-          <div class="logo-holder">
-            <a href="" title="BuckBuckGo"></a>
-            <div><input type="text" /></div>
-        </div>
-    </div>
-    </div>
-
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/app.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

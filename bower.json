@@ -4,7 +4,9 @@
   "dependencies": {
     "react": "~0.12.2",
     "backbone": "~1.1.2",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "requirejs": "~2.1.15",
+    "bootstrap": "~3.3.2"
   },
   "version": "0.1",
   "description": "A basic clone of DuckDuckGo",

@@ -1,51 +1,535 @@
-$logoUrl: "../images/logo.svg";
+$greenhex: #72c41f;
+$orangehex: #de5833;
+$greyhex: #858585;
+$greyhex2: #9da0ab;
+$greyhex3:#bfbfbf;
+$greyhex4: #838383;
+$greyhex5: #f5f5f5;
+$greyhex6: #ededed;
+$goldhex: #b6b17c;
+$goldhex1: #f4f2e2;
+$goldhex2: #f9f8f1;
+$greenhex1: #85d745;
+$greenhex2: #55b335;
+$orangehex1:#f35412;
+$orangehex2:#fd7d43;
+$toporangeheight: 4px;
 
-/* Space out content a bit */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin transform($deg){
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin theme1(){
+  background: linear-gradient(to top, $greenhex2, $greenhex1);
+  color: rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 1px rgba(255,255,255,.2);
+}
+
+@mixin theme2(){
+  background: linear-gradient(to top, $orangehex1, $orangehex2);
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.46);
+}
+
+@mixin tagleaf($bgcolor){
+    position: absolute;
+    right: 15px;
+    top: 105px;
+    background-color: $bgcolor;
+    text-transform: uppercase;
+
+    .right-transparent-arrow{
+    
+        height: 0px;
+        width: 0px;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid $goldhex2;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    
+    .tag-text{
+        display: inline-block;
+        padding: 5px 10px;
+    }
+}
+
+@mixin clip($clipcolor){
+    content:"";
+    height: 0px;
+    width: 0px;
+    border-bottom: 9px solid transparent;
+    border-left: 9px solid $clipcolor;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: -9px;   
+}
+
 body {
   background-color : #f7f7f7;
 }
 
-*{
-  box-sizing: border-box;  
+.norican-font{
+    font-family: 'Norican', cursive;
 }
-
 .orange-band{
-  position:fixed;
   width: 100%;
-  height: 5px;
-  background-color: #de5833;
+  height: $toporangeheight;
+  background-color: $orangehex;
 }
 
-.search-main{
-  margin: 0px auto;
-  width: 60%;
+.menu{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.header{
+    font-size: 34px;
+    color: $greyhex4;
+    font-weight: 200;
+}
+.menu-holder{
+   &:hover{
+      background-color: $orangehex;
+   }
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  padding: 7px;
+   @include border-radius(2px);
+}
+
+.glyphicon.glyphicon-menu-hamburger{
+  font-size: 20px;
+  color: #aaa;
 }
 
 .search-area{
-  padding: 50px 0px;
-  margin: 0px auto;
-  width: 60%;
+  padding: 100px 0px 105px 0px;
+  border-bottom: 1px solid $greyhex3;
 }
 
-.logo-holder{
-  a{
-    display: block;
-    margin: 0px auto;
-    background:url($logoUrl) no-repeat;
-    background-size: 200px 100px;    
-    width : 200px;
-    height: 100px
-  }
-
+.search-bar{
+  margin-top: 20px;
   input{
-    width:90%;
-    margin:0px auto;
-    display: block;
+    display:inline;
+    border: none;
+    width: 95%;
+    float: left;
+  }
+
+  input:focus{
+    border-color:transparent;
+    @include box-shadow(none);
+  }
+
+  span{
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
+.input-wrapper{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+    @include border-radius(4px);
+    span{
+        position: absolute;
+        right: 0px;
+        cursor: pointer;
+        height: 100%;
+        width: 45px;
+        overflow: hidden;
+        padding: 6px;
+        &:hover{
+          background-color: $orangehex;
+        }
+    }
+}
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+.glyphicon.glyphicon-search{
+  font-size: 20px;
+  display: inline-block;
+  color: #aaa;
+}
+
+.search-text{
+  font-size: 24px;
+  color: $greyhex4;
+  padding: 25px 0px;
+  font-family: "Proxima-Nova",Helvetica,Arial,sans-serif;
+  font-weight: 100;
+}
+
+.text-capitalize{
+  text-transform: uppercase;
+}
+
+.arrow-holder{
+   position: absolute;
+   left: 44%;
+   top: 425px;
+   text-align: center;
+    .special-text{
+        position: relative;
+        left: 64px;
+        top: 15px;
+        span{
+            color: $greyhex;
+            white-space: nowrap;
+        }
+        .highlight-text{
+            color: $orangehex;
+            font-size: 40px;
+            text-align: right;
+            line-height: 25px;
+        }
+    }
+}
+
+.plan-holder{
+  margin: 0px 7px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 13px;
+  border: 1px solid $greyhex5;
+  @include box-shadow(0px 6px 1px -4px $greyhex6);
+}
+
+.run-plan{
+    position: relative;
+}
+
+.plan-header{
+  padding: 15px 0px;
+  text-align: center;
+  &.green{
+    @include theme1;
+  }
+  &.orange{
+      @include theme2;
+  }
+  .plan-name{
+      font-size: 18px;
+      font-weight: bolder;
+  }
+  .plan-description{
+      font-size: 13px;
+      font-family: "Georgia";
+      font-style: italic;
+  }
+  
+}
+
+.plan-cost{
+  color: $goldhex;
+  background: linear-gradient(to top, $goldhex1, $goldhex2);
+  padding-top:15px;
+  padding-bottom:30px;
+  position: relative;
+  font-weight: bold;
+  border-bottom: 3px dotted $goldhex1;
+  span{
+      vertical-align: middle;
+      font-size: 16px;
+  }
+  span:first-child:after, span:last-child:before{
+      content: " ";
+  }
+  span:nth-child(2){
+      font-size: 32px;
+  }
+  .monthly{
+      font-size: 12px;
+  }
+}
+
+.bookmark-holder.green{
+    @include theme1();
+    @include tagleaf($greenhex1);
+    font-weight: bolder;
+    &:before{
+        @include clip(green);
+    }
+}
+
+.bookmark-holder.orange{
+    @include theme2();
+    @include tagleaf($orangehex2);
+    font-weight: bolder;
+    &:before{
+        @include clip(rgb(169, 68, 24));
+    }
+}
+
+.plan-details{
+  font-size: 12px;
+  color: $greyhex2;
+  background-color: white;
+  padding-top: 25px;
+  ul{
+    margin-bottom:0px;
+  }
+
+  li{
+    line-height: 36px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee;
+
+    i{
+      padding-right: 10px;
+      color: $greenhex;
+    }
+  }
+
+  li:last-child{
+    border-bottom:0px;
+  }
+}
+
+.plan-search{
+  background-color:white;
+  color: $greyhex2;
+  text-align: center;
+  padding: 15px 0px 50px 0px;
+  font-size: 14px;
+  height: 100px;
+  div{
+    width : 60%;
+    margin: 0px auto;
+  }
+}
+
+footer{
+  padding: 100px;
+}
+
+.search-list-wrapper{
+    padding: 20px 0px;
+    .search-bar{
+        margin-top: 0px;
+    }
+    img{
+        height: 50px;
+    }
+}
+
+.list-search-holder{
+    padding-top: 10px;
 
 }
+
+
+.search-main-summary, .related-list{
+    overflow:hidden;
+    max-height : 100px;
+}
+
+.well{
+    &.search-box{
+        padding: 0px;
+    }
+}
+
+.related-list {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    @include box-shadow(0px 0px 3px #CDCDCD);
+    border: 1px solid #e5e5e5;
+    padding-left: 0px;
+    ul{
+        padding-left: 25px;
+        padding-bottom: 8px;
+    }
+    li{
+        border-bottom: 1px solid #E5E5E5;
+    }
+    a {
+        display: inline-block;
+        height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+    & .expand{
+        background-color:
+    }
+}
+
+.show-more{
+    color : #337ab7;
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.summary-container{
+    position: relative;
+    &.expanded{
+        & .search-main-summary{
+        max-height : 200px;
+        }
+        & .related-list{
+        max-height : 200px;
+        }
+    }
+}
+
+.white-bg, .related-list{
+    background-color: white;
+}
+
+.hide{
+    display: none;
+}
+.navigate{
+    position: absolute;
+    bottom: 0px;
+    background-color: #e5e5e5;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.thumb-list{
+    position: relative;
+    ul{
+        overflow-x: hidden;
+        white-space: nowrap;
+        padding-top: 10px;
+    }
+    li{
+        background-color: white;
+        width: 250px;
+        position: relative;
+        height: 160px;
+        white-space: initial;
+        margin: 0px 10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        
+        vertical-align: middle;
+        img{
+            max-height: 50px;
+            max-width: 100px;
+        }
+    }
+    
+        
+    i{
+        color: white;
+    }
+    
+    li:hover{
+        border: 1px solid black;
+    }
+    & .holder{
+        margin-left: 0px;
+    }
+    
+    .thumb-img-holder{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    .thumb-header{
+        visibility: hidden;
+        a{
+            visibility: visible;
+            font-size: 16px;
+            text-decoration: underline
+        }
+        a:hover{
+            color: inherit;
+        }
+    }
+    
+    .thumb-description{
+        position: absolute;
+        top: 90px;
+        font-size: 12px;
+        color: grey;
+    }
+    
+    .nav-left, .nav-right{
+        background-color: $orangehex;
+        transition: all 0.5s ease;
+        position: absolute;
+        cursor: pointer;
+        height: 60px;
+        width: 50px;
+        top: 56px;
+        span{
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            font-size: 20px;
+        }
+    }
+    
+    .nav-left{
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        left: -200px;
+    }
+    
+    .nav-right{
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        right: -200px;
+    }
+    
+    &:hover{
+        .nav-left.shw{
+            left: -1px;
+        }
+        
+        .nav-right.shw{
+            right: -1px;
+        }
+    }
+    
+}
+
+.no-result{
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-top: 1px solid $greyhex4;
+    
+}
+
+
+
+
+
+
+
+
+
+
