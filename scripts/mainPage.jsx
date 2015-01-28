@@ -3,7 +3,7 @@ define(['react','jsx!SearchBox','jquery'], function(React, SearchBox, $){
         
         render : function(){
             return(
-            <div>
+            <div className="grey-bg">
                 <div className="menu">
                     <div className="menu-holder">
                         <i className="glyphicon glyphicon-menu-hamburger"></i>
@@ -60,6 +60,7 @@ define(['react','jsx!SearchBox','jquery'], function(React, SearchBox, $){
                                         <div><span>$</span><span>9</span><span>79</span></div>
                                         <div className="monthly text-capitalize">monthly</div>
                                     </div>
+                                    <div className="plan-border"></div>
                                     <div className="plan-details">
                                         <ul className="list-unstyled">
                                             <li><i className="glyphicon glyphicon-time"></i>24/7 Tech Support</li>

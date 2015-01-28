@@ -18,7 +18,6 @@ define(['react'], function(React){
         setSearchText : function(){
             var searchText;
             
-            debugger;
             searchText = this.refs.searchInput.getDOMNode().value.trim();
             location.href = "?q=" + searchText;
         },

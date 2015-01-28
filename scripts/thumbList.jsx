@@ -12,7 +12,7 @@ define(['react'],function(React){
             
             ulElem = this.refs.thumb.getDOMNode();
             
-            ulElem.scrollLeft -= 100;
+            $(ulElem).animate({scrollLeft : ulElem.scrollLeft - 400},"fast");
             this.updateState();
             
         },
@@ -21,7 +21,7 @@ define(['react'],function(React){
             var ulElem;
             
             ulElem = this.refs.thumb.getDOMNode();
-            ulElem.scrollLeft += 100;
+            $(ulElem).animate({scrollLeft : ulElem.scrollLeft + 400},"fast");
             this.updateState();
         },
         

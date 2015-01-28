@@ -1,4 +1,4 @@
- require.config({
+require.config({
     baseUrl: "scripts",
     paths: {
         "jsx!App" : "app",
@@ -7,11 +7,13 @@
         "jsx!SearchBox" : "SearchBox",
         "jsx!Categories" : "categories",
         "jsx!ThumbList" : "thumbList",
-        "react" : "../../bower_components/react/react",
-        "jquery": "../../bower_components/jquery/dist/jquery.min",
-        "main" : "main",
+        "react" : "react.min",
+        "jquery": "jquery.min",
+        "main" : "main",    
         "JSXTransformer" : "JSXTransformer"
     },
+     
+     stubModules: ["jsx","JSXTransformer", "text"],
 
     jsx: {
         fileExtension: '.jsx'

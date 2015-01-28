@@ -57,8 +57,8 @@ define(['react','jsx!SearchBox','jsx!Categories','jsx!ThumbList'], function(Reac
             return (
                 <div className={showPage ? "white-bg" : "white-bg hide"}>
                     <div className="row search-list-wrapper">
-                        <div className="row col-md-1 col-md-offset-1"><img src="images/logo.png" /></div>
-                        <div className="list-search-holder row col-md-6">
+                        <div className="row col-md-1 col-md-offset-1 hidden-xs hidden-sm"><img src="images/logo.png" /></div>
+                        <div className="list-search-holder col-sm-offset-1 col-sm-6 col-xs-offset-2 col-xs-8">
                             <SearchBox value={this.props.data.searchText}/>
                         </div>
                     </div>

@@ -13,8 +13,12 @@ define(['react'],function(React){
             
             searchList = this.props.searchList;
             relatedList = searchList.RelatedTopics.map(function(topic){
+                var newHref, searchVal;
+                
+                searchVal = topic.FirstURL.split("/")[3];
+                newHref = "?q=" + searchVal;
                 return(
-                    <li><a href={topic.FirstURL}>{topic.Text}</a></li>
+                    <li><a href={newHref}>{topic.Text}</a></li>
                 );
             });
             if(this.state.expanded){
@@ -32,7 +36,7 @@ define(['react'],function(React){
                     </div>
                     <div className="row col-md-4">
                         <div className="search-main-summary ">
-                            <h4>{searchList.Heading}</h4>
+                            <h4 className="title">{searchList.Heading}</h4>
                             <div>{searchList.Abstract}</div>
                         </div>
                         <ul className="list-inline">
@@ -43,6 +47,7 @@ define(['react'],function(React){
 
                     <div className="row col-md-4 col-md-offset-1 related-list">
                         <ul className="list-unstyled">
+                            <li>Related Topics</li>
                             {relatedList}
                         </ul>
                         <div onClick={this.expandBox} className="navigate"><i className={upDownClass}></i></div>
